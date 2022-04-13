@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import {
   createStyles,
   Paper,
@@ -38,6 +39,12 @@ const useStyles = createStyles((theme) => ({
 
 export default function ForgotPassword() {
   const { classes } = useStyles();
+  const [value, setValue] = useState('');
+
+  function resetPass() {
+    // API call reset pass
+    console.log(value)
+  }
 
   return (
     <Container size={460} my={30}>
@@ -49,7 +56,7 @@ export default function ForgotPassword() {
       </Text>
 
       <Paper withBorder shadow="md" p={30} radius="md" mt="xl">
-        <TextInput label="Your email" placeholder="me@mantine.dev" required />
+        <TextInput value={value} onChange={(event) => setValue(event.currentTarget.value)} label="Your email" placeholder="me@mantine.dev" required />
         <Group position="apart" mt="lg" className={classes.controls}>
           <Anchor color="dimmed" size="sm" className={classes.control}>
             <Center inline>
@@ -57,7 +64,7 @@ export default function ForgotPassword() {
               <Box ml={5}><Link to="/login">Back to login page</Link></Box>
             </Center>
           </Anchor>
-          <Button className={classes.control}>Reset password</Button>
+          <Button onClick={resetPass} className={classes.control}>Reset password</Button>
         </Group>
       </Paper>
     </Container>

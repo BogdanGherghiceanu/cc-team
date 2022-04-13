@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from 'react';
 import {
   TextInput,
   PasswordInput,
@@ -14,6 +15,15 @@ import {
 import { Link } from "react-router-dom";
 
 export default function AuthenticationTitle() {
+  const [mail, setMail] = useState('');
+  const [pass, setPass] = useState('');
+
+  function handleLogin() {
+    //API call log user
+    console.log(mail)
+    console.log(pass)
+  }
+
   return (
     <main>
       <Container size={420} my={40}>
@@ -27,8 +37,8 @@ export default function AuthenticationTitle() {
           Welcome back!
         </Title>
         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-          <TextInput label="Email" placeholder="you@mantine.dev" required />
-          <PasswordInput
+          <TextInput value={mail} onChange={(event) => setMail(event.currentTarget.value)} label="Email" placeholder="you@mantine.dev" required />
+          <PasswordInput value={pass} onChange={(event) => setPass(event.currentTarget.value)}
             label="Password"
             placeholder="Your password"
             required
@@ -45,7 +55,7 @@ export default function AuthenticationTitle() {
               Forgot password?
             </Anchor> */}
           </Group>
-          <Button fullWidth mt="xl">
+          <Button onClick={handleLogin} fullWidth mt="xl">
             Sign in
           </Button>
           <Text color="dimmed" size="sm" align="center" mt={5}>
