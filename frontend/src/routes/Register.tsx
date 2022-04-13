@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from 'react';
 import {
   TextInput,
   PasswordInput,
@@ -14,6 +15,16 @@ import {
 import { Link } from "react-router-dom";
 
 export default function AuthenticationTitle() {
+  const [mail, setMail] = useState('');
+  const [pass, setPass] = useState('');
+  const [pass2, setPass2] = useState('');
+
+  function handleLogin() {
+    console.log(mail)
+    console.log(pass)
+    console.log(pass2)
+  }
+
   return (
     <main>
       <Container size={420} my={40}>
@@ -28,20 +39,20 @@ export default function AuthenticationTitle() {
         </Title>
 
         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-          <TextInput label="Email" placeholder="you@mantine.dev" required />
-          <PasswordInput
+          <TextInput value={mail} onChange={(event) => setMail(event.currentTarget.value)} label="Email" placeholder="you@mantine.dev" required />
+          <PasswordInput value={pass} onChange={(event) => setPass(event.currentTarget.value)}
             label="Password"
             placeholder="Enter a password"
             required
             mt="md"
           />
-          <PasswordInput
+          <PasswordInput value={pass2} onChange={(event) => setPass2(event.currentTarget.value)}
             label="Re-type password"
             placeholder="Enter a password"
             required
             mt="md"
           />
-          <Button fullWidth mt="xl">
+          <Button onClick={handleLogin} fullWidth mt="xl">
             Sign up
           </Button>
           <Text color="dimmed" size="sm" align="center" mt={5}>

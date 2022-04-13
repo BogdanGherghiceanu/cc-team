@@ -73,7 +73,7 @@ const useNavbarStyles = createStyles((theme) => ({
   },
 }));
 
-export function NavbarMinimalColored() {
+export default function NavbarMinimalColored() {
   const [active, setActive] = useState(2);
   const { classes } = useNavbarStyles();
 
@@ -98,7 +98,7 @@ export function NavbarMinimalColored() {
       </Navbar.Section>
       <Navbar.Section>
         <Group direction="column" align="center" spacing={0}>
-          <NavbarLink icon={SwitchHorizontal} label="Change account" />
+          {/* <NavbarLink icon={SwitchHorizontal} label="Change account" /> */}
           <NavbarLink icon={Logout} label="Logout" />
         </Group>
       </Navbar.Section>
