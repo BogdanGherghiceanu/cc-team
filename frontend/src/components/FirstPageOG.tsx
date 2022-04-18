@@ -7,7 +7,7 @@ const useStyles = createStyles((theme) => ({
   hero: {
     position: 'relative',
     backgroundImage:
-      'url(https://images.unsplash.com/photo-1471479917193-f00955256257?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80)',
+      'url(https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -80,9 +80,9 @@ export default function HeroContentLeft() {
         zIndex={0}
       />
       <Container className={classes.container}>
-        <Title className={classes.title}>Rent a 🚗</Title>
+        <Title className={classes.title}>Your online 💸 manager</Title>
         <Text className={classes.description} size="xl" mt="xl">
-          You're in hurry and your friend let you down? Rent a luxury car from us and make him jealous 😎.
+          Noi avem grija de facturile tale pentru a-ti simplifica viata.
         </Text>
 
         <Button onClick={goToLogin} variant="gradient" size="xl" radius="xl" className={classes.control}>
