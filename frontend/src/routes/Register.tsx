@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 
 export default function AuthenticationTitle() {
   const [mail, setMail] = useState('');
+  const [phoneNr, setPhoneNr] = useState('');
   const [pass, setPass] = useState('');
   const [pass2, setPass2] = useState('');
 
@@ -40,6 +41,7 @@ export default function AuthenticationTitle() {
 
         <Paper withBorder shadow="md" p={30} mt={30} radius="md">
           <TextInput value={mail} onChange={(event) => setMail(event.currentTarget.value)} label="Email" placeholder="you@mantine.dev" required />
+          <TextInput value={phoneNr} onChange={(event) => setPhoneNr(event.currentTarget.value)} label="Phone number" placeholder="07sinoi2" required />
           <PasswordInput value={pass} onChange={(event) => setPass(event.currentTarget.value)}
             label="Password"
             placeholder="Enter a password"
